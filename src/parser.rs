@@ -113,6 +113,16 @@ impl Parser {
                     node: Box::new(expr),
                 }
             }
+
+            Some(Token::DSLASH) => {
+                let expr = self.parse_factor();
+                println!(" Square Root de {:?}", expr);
+                Node::unary {
+                    op: Operator::SQR,
+                    node: Box::new(expr),
+                }
+            }
+
             _ => panic!("algo anduvo raro"),
         }
     }

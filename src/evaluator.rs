@@ -33,6 +33,7 @@ pub fn evaluate(nodo: &Node) -> f64 {
             match op {
                 Operator::NEG => value.neg(),
                 Operator::ADD => value,
+                Operator::SQR => value.powf(1.0 / 2.0),
                 _ => panic!("No tendria que estar aca"),
             }
         }
